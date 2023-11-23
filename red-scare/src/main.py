@@ -204,8 +204,8 @@ def many():
 # Few - Return the minimum number of Red Vertices that must be used in a path
 # return the number of red vertices if possible, else if no path exists return -1
 def few():
-    
-    return "not implemented - NP Hard???"
+    return "TODO"
+    # return "not implemented - NP Hard???"
 
 # Alternate - Does there exist a path that alternates between Red and Non-Red Vertices?
 # return 'true' if possible, otherwise return 'false' 
