@@ -7,14 +7,15 @@ def split_vertices(G):
         newNodeId = f"{node}Out"
         splittedG.add_node(newNodeId)
 
-        toNode = []
         # TODO: make more effecient
+        toNodes = []
         for (_, toEdge) in list(filter(lambda x: x[0] == node, splittedG.edges())):
-            toNode.append(toEdge)
+            toNodes.append(toEdge)
+        # toNodes = list(G.successors(node))
 
-        for temp in toNode:
-            splittedG.remove_edge(node, temp)
-            splittedG.add_edge(newNodeId, temp)
+        for toNode in toNodes:
+            splittedG.remove_edge(node, toNode)
+            splittedG.add_edge(newNodeId, toNode)
 
         splittedG.add_edge(node, newNodeId)
 
