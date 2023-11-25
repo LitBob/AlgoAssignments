@@ -26,20 +26,13 @@ def run_with_timeout(func, args, timeout):
         print("Function exceeded timeout, terminating...")
         p.terminate()
         p.join()
-        return None  # or some other value indicating that the function was terminated
+        return "TIMEOUT"  # or some other value indicating that the function was terminated
 
     else:
         return queue.get()  # get the result from the queue
 
-def exception_wrapper(func, args, timeout):
-    try:
-        return run_with_timeout(func, args, timeout)
-    except Exception as e:
-        print(e)
-        return "TIMEOUT"
-
-skipCount = 1
-skipCounter = 0
+# skipCount = 1
+# skipCounter = 0
 outFilePath = f'./red-scare/out/output-{datetime.datetime.now()}.out'
 
 dir_name = os.path.dirname(outFilePath)
@@ -51,21 +44,34 @@ with open(outFilePath, 'w') as f:
 
 write_line_to_file(outFilePath, "Instance name\t\tn\tA\tF\tM\tN\tS\n")
 
+# 5000 = 1 hour
 # 300 = 5 minutes
-timeout = 300
+# 100 = 1 minute
+timeout = 100
 for file in os.listdir('./red-scare/data'):
-    if skipCounter < skipCount:
-        skipCounter += 1
-        continue
+    print(f'Running {file}')
 
     G, start, end, isGraphDirected, n = input_helper.read_data(f'red-scare/data/{file}')
     resultLine = f'{file}\t{n}\t'
     
-    resultLine += f"{exception_wrapper(some.run, (G.copy(), isGraphDirected, start, end), timeout)}\t"
-    resultLine += f"{exception_wrapper(none.run, (G.copy(), start, end), timeout)}\t"
-    resultLine += f"{exception_wrapper(many.run, (G.copy(), start, end, isGraphDirected), timeout)}\t"
-    resultLine += f"{exception_wrapper(few.run, (), timeout)}\t"
-    resultLine += f"{exception_wrapper(alternate.run, (G.copy(), start, end), timeout)}\t\n"
+    some_result = run_with_timeout(some.run, (G.copy(), isGraphDirected, start, end), timeout)
+    print(f'Some: {some_result}')
+    resultLine += f"{some_result}\t"
 
+    none_result = run_with_timeout(none.run, (G.copy(), start, end), timeout)
+    print(f'None: {none_result}')
+    resultLine += f"{none_result}\t"
+
+    many_result = run_with_timeout(many.run, (G.copy(), start, end, isGraphDirected), timeout)
+    print(f'Many: {many_result}')
+    resultLine += f"{many_result}\t"
+
+    few_result = run_with_timeout(few.run, (), timeout)
+    print(f'Few: {few_result}')
+    resultLine += f"{few_result}\t"
+
+    alternate_result = run_with_timeout(alternate.run, (G.copy(), start, end), timeout)
+    print(f'Alternate: {alternate_result}')
+    resultLine += f"{alternate_result}\t"
+    
     write_line_to_file(outFilePath, resultLine)
-    break

@@ -1,28 +1,33 @@
 # Alternate - Does there exist a path that alternates between Red and Non-Red Vertices?
 # return 'true' if possible, otherwise return 'false' 
 def run(G, start, end):
-    visited = []
-    
-    def recurse(graph, node, end, visited):
-        visited.append(node)
+    try:
+        visited = []
         
-        currentColor = 'red' if graph.nodes[node]['red'] else 'white'
+        def recurse(graph, node, end, visited):
+            visited.append(node)
+            
+            currentColor = 'red' if graph.nodes[node]['red'] else 'white'
 
-        if node == end:
-            return True
+            if node == end:
+                return True
 
-        currentAnswer = False
-        for toNode in graph[node]:
-            nextColor = 'red' if graph.nodes[toNode]['red'] else 'white'
+            currentAnswer = False
+            for toNode in graph[node]:
+                nextColor = 'red' if graph.nodes[toNode]['red'] else 'white'
 
-            if currentColor == nextColor:
-                continue
+                if currentColor == nextColor:
+                    continue
 
-            if toNode in visited:
-                continue
+                if toNode in visited:
+                    continue
 
-            currentAnswer = currentAnswer or recurse(graph, toNode, end, visited)
+                currentAnswer = currentAnswer or recurse(graph, toNode, end, visited)
 
-        return currentAnswer
+            return currentAnswer
 
-    return recurse(G, start, end, visited)
+        return recurse(G, start, end, visited)
+    except Exception as e:
+        errorText = f'Error in alternate.py: {e}'
+        print(errorText)
+        return errorText
