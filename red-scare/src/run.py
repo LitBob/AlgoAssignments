@@ -48,7 +48,12 @@ write_line_to_file(outFilePath, "Instance name\t\tn\tA\tF\tM\tN\tS\n")
 # 300 = 5 minutes
 # 100 = 1 minute
 timeout = 100
+skip = True
 for file in os.listdir('./red-scare/data'):
+    if file == 'wall-z-4.txt':
+        skip = False
+    if skip:
+        continue
     print(f'Running {file}')
 
     G, start, end, isGraphDirected, n = input_helper.read_data(f'red-scare/data/{file}')
@@ -72,6 +77,6 @@ for file in os.listdir('./red-scare/data'):
 
     alternate_result = run_with_timeout(alternate.run, (G.copy(), start, end), timeout)
     print(f'Alternate: {alternate_result}')
-    resultLine += f"{alternate_result}\t"
+    resultLine += f"{alternate_result}\t\n"
     
     write_line_to_file(outFilePath, resultLine)
