@@ -46,3 +46,7 @@ def max_red_nodes(graph, node, end_node, memo):
     # Memoize the result for the current node
     memo[node] = max_red_count
     return max_red_count
+
+def findPath(G, start, end):
+    # Find path from start to end
+    return nx.shortest_path(G, start, end)

@@ -1,0 +1,138 @@
+data/cyclic-test-line.txt
+n: 3, none: 2, some: False, alternate: False, many: 0, few: 0
+data/cyclic-test-triangle.txt
+n: 3, none: 1, some: False, alternate: False, many: 0, few: 0
+data/P3.txt
+n: 3, none: -1, some: True, alternate: True, many: 1, few: 1
+data/many_test_1.txt
+n: 7, none: -1, some: True, alternate: False, many: 2, few: 1
+data/G-ex.txt
+n: 8, none: 3, some: True, alternate: True, many: 2, few: 0
+data/increase-n8-1.txt
+n: 8, none: 1, some: True, alternate: True, many: 2, few: 1
+data/increase-n8-2.txt
+n: 8, none: 1, some: True, alternate: True, many: 1, few: 1
+data/increase-n8-3.txt
+n: 8, none: 1, some: True, alternate: True, many: 1, few: 0
+data/wall-n-1.txt
+n: 8, none: 1, some: True, alternate: False, many: 1, few: 0
+data/wall-p-1.txt
+n: 8, none: 1, some: True, alternate: False, many: 1, few: 0
+data/wall-z-1.txt
+n: 8, none: 1, some: True, alternate: False, many: 1, few: 0
+data/smallworld-3-0.txt
+n: 9, none: 4, some: True, alternate: False, many: 3, few: 1
+data/smallworld-3-1.txt
+n: 9, none: 2, some: True, alternate: False, many: 4, few: 1
+data/gnm-10-15-0.txt
+n: 10, none: 1, some: True, alternate: False, many: 1, few: 0
+data/gnm-10-15-1.txt
+n: 10, none: 1, some: True, alternate: True, many: 5, few: 1
+data/gnm-10-20-0.txt
+n: 10, none: 3, some: True, alternate: False, many: 1, few: 1
+data/gnm-10-20-1.txt
+n: 10, none: 3, some: True, alternate: True, many: 5, few: 2
+data/increase-n10-1.txt
+n: 10, none: 1, some: True, alternate: True, many: 2, few: 1
+data/increase-n10-2.txt
+n: 10, none: 1, some: True, alternate: True, many: 3, few: 2
+data/increase-n10-3.txt
+no paths
+data/many_test_2.txt
+n: 11, none: -1, some: True, alternate: False, many: 2, few: 1
+data/ski-level3-2.txt
+n: 14, none: 5, some: True, alternate: False, many: 1, few: 0
+data/wall-p-2.txt
+n: 14, none: 1, some: True, alternate: False, many: 1, few: 0
+data/ski-level3-3.txt
+n: 15, none: 5, some: True, alternate: False, many: 1, few: 0
+data/wall-z-2.txt
+n: 15, none: 1, some: False, alternate: False, many: 0, few: 0
+data/ski-level3-1.txt
+n: 16, none: 5, some: True, alternate: True, many: 3, few: 1
+data/wall-n-2.txt
+n: 16, none: 1, some: False, alternate: False, many: 0, few: 0
+data/rusty-1-17.txt
+n: 17, none: 10, some: True, alternate: False, many: 1, few: 0
+data/common-1-20.txt
+no paths
+data/common-2-20.txt
+no paths
+data/dodecahedron.txt
+n: 20, none: 1, some: True, alternate: False, many: 20, few: 2
+data/increase-n20-1.txt
+no paths
+data/increase-n20-2.txt
+n: 20, none: 1, some: True, alternate: True, many: 5, few: 1
+data/increase-n20-3.txt
+no paths
+data/wall-p-3.txt
+n: 20, none: 1, some: True, alternate: False, many: 1, few: 0
+data/wall-z-3.txt
+n: 22, none: 1, some: False, alternate: False, many: 0, few: 0
+data/wall-n-3.txt
+n: 24, none: 1, some: False, alternate: False, many: 0, few: 0
+data/grid-5-0.txt
+n: 25, none: 14, some: True, alternate: True, many: 8, few: 0
+data/grid-5-1.txt
+n: 25, none: 8, some: True, alternate: True, many: 6, few: 0
+data/grid-5-2.txt
+n: 25, none: -1, some: True, alternate: True, many: 10, few: 1
+data/ski-level5-2.txt
+n: 26, none: -1, some: True, alternate: False, many: 2, few: 1
+data/wall-p-4.txt
+n: 26, none: 1, some: True, alternate: False, many: 1, few: 0
+data/ski-level5-3.txt
+n: 27, none: 7, some: False, alternate: False, many: 0, few: 0
+data/ski-level5-1.txt
+n: 29, none: -1, some: True, alternate: False, many: 3, few: 1
+data/wall-z-4.txt
+n: 29, none: 1, some: False, alternate: False, many: 0, few: 0
+data/wall-n-4.txt
+n: 32, none: 1, some: False, alternate: False, many: 0, few: 0
+data/ski-illustration.txt
+n: 36, none: 8, some: True, alternate: False, many: 1, few: 0
+data/common-1-50.txt
+no paths
+data/common-2-50.txt
+no paths
+data/increase-n50-1.txt
+no paths
+data/increase-n50-2.txt
+n: 50, none: 1, some: True, alternate: True, many: 5, few: 1
+data/increase-n50-3.txt
+n: 50, none: 1, some: True, alternate: True, many: 4, few: 1
+data/wall-p-10.txt
+n: 62, none: 1, some: True, alternate: False, many: 1, few: 0
+data/wall-z-10.txt
+n: 71, none: 1, some: False, alternate: False, many: 0, few: 0
+data/ski-level10-2.txt
+n: 76, none: -1, some: True, alternate: False, many: 4, few: 1
+data/ski-level10-3.txt
+n: 77, none: -1, some: True, alternate: False, many: 7, few: 4
+data/ski-level10-1.txt
+no paths
+data/wall-n-10.txt
+n: 80, none: 1, some: False, alternate: False, many: 0, few: 0
+data/common-1-100.txt
+no paths
+data/common-2-100.txt
+no paths
+data/increase-n100-1.txt
+no paths
+data/increase-n100-2.txt
+n: 100, none: 1, some: True, alternate: True, many: 13, few: 2
+data/increase-n100-3.txt
+no paths
+data/common-1-250.txt
+no paths
+data/common-2-250.txt
+no paths
+data/ski-level20-1.txt
+n: 252, none: -1, some: True, alternate: False, many: 10, few: 3
+data/ski-level20-2.txt
+n: 253, none: -1, some: True, alternate: False, many: 14, few: 9
+data/ski-level20-3.txt
+no paths
+data/common-1-500.txt
+no paths

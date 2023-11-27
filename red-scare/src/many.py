@@ -10,16 +10,18 @@ def run(G, start, end, graphIsDirected):
         memoization = {}
 
         # Check if graph is directed and acyclic
+        print(nx.is_directed_acyclic_graph(G))
         if graphIsDirected and nx.is_directed_acyclic_graph(G):
+        # if True:
             # This means that it can be solved with dynamic programming
 
             # But we just quickly check if there even is a path
             try: 
-                findPath(G, start, end)
+                graph_helper.findPath(G, start, end)
             except:
                 return -1
             
-            return graph_helper.max_red_nodes(Gcopy, start, end, memoization)
+            return graph_helper.max_red_nodes(G, start, end, memoization)
 
         else:
             return -1

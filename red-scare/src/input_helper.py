@@ -6,6 +6,7 @@ def read_data(file):
     start, end = '', ''
     G = nx.DiGraph()
     graphIsDirected = True
+    redList = []
 
     with open(file, 'r') as file:
         for line in file:
@@ -46,6 +47,6 @@ def read_data(file):
                 m_red += 1
                 continue
 
-            redList = list(filter(lambda x: x[1], G.nodes(data='red')))
+        redList = list(filter(lambda x: x[1], G.nodes(data='red')))
 
-    return (G, start, end, graphIsDirected, n)
+    return (G, start, end, graphIsDirected, n, redList)
