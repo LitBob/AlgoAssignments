@@ -12,7 +12,7 @@ def run(G, start, end, n, redNodes):
     if none.run(G, start, end) != -1:
         return 0
     
-    if n < 50:
+    if n < 260:
         # Brute force
 
         if nx.is_directed_acyclic_graph(G):

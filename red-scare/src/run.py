@@ -1,3 +1,4 @@
+import sys
 import os
 import datetime
 import input_helper
@@ -7,6 +8,9 @@ import many
 import few
 import alternate
 import multiprocessing
+import graph_helper
+
+sys.setrecursionlimit(1000000)
 
 class Result:
     fileName = ''
@@ -42,9 +46,7 @@ def run_with_timeout(func, args, timeout):
     else:
         return queue.get()  # get the result from the queue
 
-# skipCount = 1
-# skipCounter = 0
-outFilePath = f'./red-scare/out/output-{datetime.datetime.now()}.out'
+outFilePath = f'./red-scare/out/output-{datetime.datetime.now()}.txt'
 
 dir_name = os.path.dirname(outFilePath)
 if not os.path.exists(dir_name):
@@ -53,40 +55,40 @@ if not os.path.exists(dir_name):
 with open(outFilePath, 'w') as f:
     f.write('')
 
-write_line_to_file(outFilePath, "Instance name\t\tn\tA\tF\tM\tN\tS\n")
+write_line_to_file(outFilePath, "Instance name\tn\tA\tF\tM\tN\tS\n")
 
 # 5000 = 1 hour
 # 300 = 5 minutes
 # 100 = 1 minute
-timeout = 100
-# for file in ['G-ex.txt', 'gnm-10-15-0.txt', 'gnm-10-15-1.txt', 'gnm-10-20-0.txt', 'ski-level3-2.txt', 'ski-level3-1.txt', 'P3.txt']:
-# for file in ['ski-level5-1.txt']:
-for file in os.listdir('./red-scare/data'):
+timeout = 5000
+# for file in os.listdir('./red-scare/data'):
+for file in ['wall-n-10000.txt', 'wall-p-10000.txt', 'wall-z-10000.txt']:
     print(f'Running {file}')
     
     result = Result()
     result.fileName = file
     G, start, end, isGraphDirected, n, list_of_red_nodes = input_helper.read_data(f'red-scare/data/{file}')
     resultLine = f'{file}\t{n}\t'
-    
+
     try:
-        path = findPath(GnoReds, start, end)
+        hasPath = graph_helper.findPath(G, start, end)
     except Exception: 
-        write_line_to_file(outFilePath, Result.toString())
+        hasPath = None
 
-    result.some = run_with_timeout(some.run, (G.copy(), isGraphDirected, start, end), timeout)
-    print(f'Some: {result.some}')
+    if hasPath != None:
+        result.some = run_with_timeout(some.run, (G.copy(), isGraphDirected, start, end), timeout)
+        print(f'Some: {result.some}')
 
-    result.none = run_with_timeout(none.run, (G.copy(), start, end), timeout)
-    print(f'None: {result.none}')
+        result.none = run_with_timeout(none.run, (G.copy(), start, end), timeout)
+        print(f'None: {result.none}')
 
-    result.many = run_with_timeout(many.run, (G.copy(), start, end, isGraphDirected), timeout)
-    print(f'Many: {result.many}')
+        result.many = run_with_timeout(many.run, (G.copy(), start, end, isGraphDirected), timeout)
+        print(f'Many: {result.many}')
 
-    result.few = run_with_timeout(few.run, (G.copy(), start, end, n, list_of_red_nodes), timeout)
-    print(f'Few: {result.few}')
+        result.few = run_with_timeout(few.run, (G.copy(), start, end, n, list_of_red_nodes), timeout)
+        print(f'Few: {result.few}')
 
-    result.alternate = run_with_timeout(alternate.run, (G.copy(), start, end), timeout)
-    print(f'Alternate: {result.alternate}')
+        result.alternate = run_with_timeout(alternate.run, (G.copy(), start, end), timeout)
+        print(f'Alternate: {result.alternate}')
     
     write_line_to_file(outFilePath, result.toString())

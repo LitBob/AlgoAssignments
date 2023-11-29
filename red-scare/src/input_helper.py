@@ -47,6 +47,6 @@ def read_data(file):
                 m_red += 1
                 continue
 
-        redList = list(filter(lambda x: x[1], G.nodes(data='red')))
+        redList = list(map(lambda x: x[0], list(filter(lambda x: x[1], G.nodes(data='red')))))
 
     return (G, start, end, graphIsDirected, n, redList)
