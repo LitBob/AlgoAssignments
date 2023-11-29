@@ -62,7 +62,8 @@ write_line_to_file(outFilePath, "Instance name\tn\tA\tF\tM\tN\tS\n")
 # 100 = 1 minute
 timeout = 5000
 # for file in os.listdir('./red-scare/data'):
-for file in ['wall-n-10000.txt', 'wall-p-10000.txt', 'wall-z-10000.txt']:
+# for file in ['wall-n-10000.txt', 'wall-p-10000.txt', 'wall-z-10000.txt']:
+for file in ['wall-n-10.txt']:
     print(f'Running {file}')
     
     result = Result()

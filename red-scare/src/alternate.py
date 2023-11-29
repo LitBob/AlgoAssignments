@@ -2,10 +2,10 @@
 # return 'true' if possible, otherwise return 'false' 
 def run(G, start, end):
     try:
-        visited = []
+        visited = set()
         
         def recurse(graph, node, end, visited):
-            visited.append(node)
+            visited.add(node)
             
             currentColor = 'red' if graph.nodes[node]['red'] else 'white'
 

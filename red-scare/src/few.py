@@ -3,32 +3,25 @@ import none
 
 # Few - Return the minimum number of Red Vertices that must be used in a path
 # return the number of red vertices if possible, else if no path exists return -1
+
 def run(G, start, end, n, redNodes):
     try:
-        nx.shortest_path(G, start, end)
-    except:
-        return -1
-    
-    if none.run(G, start, end) != -1:
-        return 0
-    
-    if n < 260:
-        # Brute force
+        for fromNode, toNode, data in G.edges(data=True):
+            if G.nodes[toNode]['red']:
+                data['weight'] = 1
+            else:
+                data['weight'] = 0
 
-        if nx.is_directed_acyclic_graph(G):
-
-            allSimplePaths = nx.all_simple_paths(G, start, end)
-            amountOfRedNodes = []
-
-            for path in allSimplePaths:
-                tempRedNodes = 0
-                for node in path:
-                    if node in redNodes:
-                        tempRedNodes += 1
-                amountOfRedNodes.append(tempRedNodes)
-            return min(amountOfRedNodes)
-            
-    return "?!"
-    # If case is "?!" then we know that the correct few() is 1 <= few() <= many()
-    # But we should probably just write this in the report
- 
+        try:
+            count = 0
+            path = nx.dijkstra_path(G, start, end, weight='weight')
+            for node in path:
+                if G.nodes[node]['red']:
+                    count += 1
+            return count
+        except Exception as e:
+            return -1
+    except Exception as e:
+        errorText = f'Error in few.py: {e}'
+        print(errorText)
+        return errorText

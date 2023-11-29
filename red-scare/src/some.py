@@ -19,7 +19,7 @@ def run(GFlow, graphIsDirected, start, end):
         
         # foreach red node, add an edge from the new source to every red node
         for red_node in graph_helper.get_nodes_with_attribute(GFlow, 'red', True):
-            GFlow.add_edge("source", red_node, capacity=1)
+            GFlow.add_edge("source", red_node, capacity=2)
             
         try: 
             maxFlow = nx.maximum_flow(GFlow, 'source', 'sink', 'capacity')
