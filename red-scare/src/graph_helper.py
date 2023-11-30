@@ -15,9 +15,9 @@ def split_vertices(G):
 
         for toNode in toNodes:
             splittedG.remove_edge(node, toNode)
-            splittedG.add_edge(newNodeId, toNode)
+            splittedG.add_edge(newNodeId, toNode, capacity=1, weight=1)
 
-        splittedG.add_edge(node, newNodeId)
+        splittedG.add_edge(node, newNodeId, capacity=1, weight=1)
 
     return splittedG
 

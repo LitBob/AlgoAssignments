@@ -11,7 +11,7 @@ def run(GFlow, graphIsDirected, start, end):
         if graphIsDirected:
             if many.run(GFlow, start, end, graphIsDirected) > 0:
                 return True
-            else :
+            else:
                 return False
 
         # Case of undirected graphs
