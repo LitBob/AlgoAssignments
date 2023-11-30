@@ -1,13 +1,22 @@
 import networkx as nx
+import many
 import graph_helper as graph_helper
 
 ## Some - Does there exist a path that uses at least one Red Vertex?
 ## return 'true' if such a path exists, else return 'false'
 def run(GFlow, graphIsDirected, start, end):
     try:
-        # TODO : We made split_vertices() but maybe should test more throughly
-        if not graphIsDirected:
-            GFlow = graph_helper.split_vertices(GFlow)
+
+        # Case of directed graphs
+        if graphIsDirected:
+            if many.run(GFlow, start, end, graphIsDirected) > 0:
+                return True
+
+        # Case of undirected graphs
+        GFlow = graph_helper.split_vertices(GFlow) # TODO : We made split_vertices() but maybe should test more throughly
+
+        # TODO it does not work for Directed Graphs
+        # If it is directed then just call Many Instead 
 
         # Add new source (called start from now) vertice 
         GFlow.add_node("source")
