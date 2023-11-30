@@ -204,8 +204,29 @@ def many():
 # Few - Return the minimum number of Red Vertices that must be used in a path
 # return the number of red vertices if possible, else if no path exists return -1
 def few():
-    return "TODO"
-    # return "not implemented - NP Hard???"
+    try:
+        findPath(G, start, end)
+    except:
+        return -1
+    if n < 20:
+        # Brute force
+
+        if nx.is_directed_acyclic_graph(G):
+            def bruteForce (graph, node, end, amountOfRedNodes):
+                if node == end:
+                    return amountOfRedNodes
+                if graph.nodes[node]['red']:
+                    amountOfRedNodes += 1
+                for toNode in graph[node]:
+                    currentAnswer = min(amountOfRedNodes, bruteForce(graph, toNode, end, amountOfRedNodes))
+                return currentAnswer
+            return bruteForce(G, start, end, [], 0)
+            
+    if none() != -1:
+        return 0
+    return "?!"
+    # If case is "?!" then we know that the correct few() is 1 <= few() <= many()
+    # But we should probably just write this in the report
 
 # Alternate - Does there exist a path that alternates between Red and Non-Red Vertices?
 # return 'true' if possible, otherwise return 'false' 
