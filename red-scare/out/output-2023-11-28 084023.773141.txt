@@ -1,0 +1,20 @@
+Instance name	n	A	F	M	N	S
+common-1-5757.txt	True	0	-1	6	True
+common-2-3000.txt	True	0	-1	4	True
+common-2-3500.txt	True	0	-1	4	True
+common-2-4000.txt	True	0	-1	4	True
+common-2-4500.txt	True	0	-1	4	True
+common-2-5000.txt	True	0	-1	4	True
+common-2-5757.txt	True	0	-1	4	True
+gnm-1000-1500-0.txt	False	?!	-1	-1	True
+gnm-1000-1500-1.txt	False	?!	-1	-1	True
+gnm-1000-2000-1.txt	False	?!	-1	-1	True
+gnm-2000-3000-1.txt	True	?!	-1	-1	True
+gnm-3000-4500-1.txt	False	?!	-1	-1	True
+gnm-5000-10000-0.txt	False	0	-1	5	True
+grid-10-2.txt	True	?!	-1	-1	True
+grid-25-2.txt	True	?!	-1	-1	True
+grid-5-2.txt	True	?!	-1	-1	True
+grid-50-2.txt	False	?!	-1	-1	True
+P3.txt	True	?!	-1	-1	True
+rusty-2-2500.txt	False	0	-1	4	True

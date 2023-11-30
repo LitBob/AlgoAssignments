@@ -1,0 +1,5 @@
+Instance name	n	A	F	M	N	S
+common-1-5757.txt	True	0	-1	6	True
+common-2-3000.txt	True	0	-1	4	True
+common-2-3500.txt	True	0	-1	4	True
+common-2-4000.txt	True	0	-1	4	True

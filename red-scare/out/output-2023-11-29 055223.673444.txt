@@ -1,0 +1,8 @@
+Instance name	n	A	F	M	N	S
+rusty-2-3500.txt	False	0	-1	4	True
+rusty-2-4000.txt	False	0	-1	4	True
+rusty-2-4500.txt	False	0	-1	4	True
+rusty-2-5000.txt	False	0	-1	4	True
+rusty-2-5757.txt	False	0	-1	4	True
+smallworld-50-1.txt	True	?!	-1	-1	True
+wall-n-1000.txt	False	0	-1	1	True
