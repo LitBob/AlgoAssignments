@@ -11,6 +11,8 @@ def run(GFlow, graphIsDirected, start, end):
         if graphIsDirected:
             if many.run(GFlow, start, end, graphIsDirected) > 0:
                 return True
+            else :
+                return False
 
         # Case of undirected graphs
         GFlow = graph_helper.split_vertices(GFlow) # TODO : We made split_vertices() but maybe should test more throughly
