@@ -1,2 +1,0 @@
-Instance name	n	A	F	M	N	S
-rusty-2-3000.txt	False	0	-1	4	True
